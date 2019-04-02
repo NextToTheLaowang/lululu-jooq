@@ -3,9 +3,11 @@ package com.java.src.lululu.config;
 import org.jooq.codegen.DefaultGeneratorStrategy;
 import org.jooq.meta.Definition;
 import org.jooq.tools.StringUtils;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = {"com.java.src.lululu"})
 public class MyStrategy extends DefaultGeneratorStrategy {
   private String tablePrefix = "tb_";
 
