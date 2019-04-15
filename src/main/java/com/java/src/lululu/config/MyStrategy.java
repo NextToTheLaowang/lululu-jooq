@@ -1,3 +1,4 @@
+/*
 package com.java.src.lululu.config;
 
 import org.jooq.codegen.DefaultGeneratorStrategy;
@@ -39,3 +40,4 @@ public class MyStrategy extends DefaultGeneratorStrategy {
     return result.toString();
   }
 }
+*/

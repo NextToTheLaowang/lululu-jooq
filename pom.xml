@@ -16,8 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <jooq-version>3.11.9</jooq-version>
+        <jooq.version>3.9.4</jooq.version>
         <mysql-jdbc-driver>5.1.34</mysql-jdbc-driver>
+        <version.roaster>2.20.1.Final</version.roaster>
     </properties>
 
     <dependencies>
@@ -54,24 +55,33 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq</artifactId>
-            <version>${jooq-version}</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-meta</artifactId>
-            <version>${jooq-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen</artifactId>
-            <version>${jooq-version}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.simpleflatmapper</groupId>
             <artifactId>sfm-jooq</artifactId>
             <version>3.15.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+            <version>3.9.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.forge.roaster</groupId>
+            <artifactId>roaster-api</artifactId>
+            <version>${version.roaster}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.forge.roaster</groupId>
+            <artifactId>roaster-jdt</artifactId>
+            <version>${version.roaster}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -104,6 +114,45 @@
         </dependency>
         <!-- Swagger2强大RESTful API文档 -->
 
+        <!--工具类包 begin-->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>24.0-jre</version>
+        </dependency>
+        <!--工具类包 end-->
+
     </dependencies>
 
     <build>
@@ -112,66 +161,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
-            <plugin>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven</artifactId>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.42</version>
-                    </dependency>
-                </dependencies>
-
-                <configuration>
-                    <jdbc>
-                        <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://139.199.101.89:3306</url>
-                        <username>wangqiyue</username>
-                        <password>lw123456.</password>
-                    </jdbc>
-
-                    <generator>
-                        <database>
-                            <name>org.jooq.meta.mysql.MySQLDatabase</name>
-                            <!--include和exclude用于控制为数据库中哪些表生成代码-->
-                            <includes>.*</includes>
-                            <!--<excludes></excludes>-->
-
-                            <!--数据库名称-->
-                            <inputSchema>LW</inputSchema>
-                        </database>
-
-                        <generate>
-                            <!--生成dao和pojo-->
-                            <daos>true</daos>
-                            <pojos>true</pojos>
-                            <!--把数据库时间类型映射到java 8时间类型-->
-                            <javaTimeTypes>true</javaTimeTypes>
-                            <!--<interfaces>true</interfaces>-->
-                            <!--不在生成的代码中添加spring注释，比如@Repository-->
-                            <springAnnotations>true</springAnnotations>
-                        </generate>
-
-                        <target>
-                            <!--生成代码文件的包名及放置目录-->
-                            <packageName>com.java.src.lululu.gen</packageName>
-                            <directory>src/main/java</directory>
-                        </target>
-
-                    </generator>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 </project>
