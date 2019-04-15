@@ -57,7 +57,7 @@ public class JooqSpringBootConfiguration {
     @Value("${spring.datasource.hikari.maxLifetimeMs}")
     private int maxLifetimeMs;
 
-    @Value("${datasource.hikari.leakDetectionThresholdMs}")
+    @Value("${spring.datasource.hikari.leakDetectionThresholdMs}")
     private int leakDetectionThresholdMs;
 
     @Value("${spring.datasource.hikari.connectionTestQuery}")

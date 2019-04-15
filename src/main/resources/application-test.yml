@@ -1,0 +1,37 @@
+#Undertow 日志存放目录
+server:
+  undertow:
+    accesslog:
+      enabled: false # 是否启动日志
+      dir: .
+
+springfox:
+  swagger:
+    enabled: true
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://139.199.101.89:3306/LW?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: wangqiyue
+    password: lw123456.
+    continueOnError: true
+    hikari:
+      connectionTestQuery: SELECT 1
+      idleTimeout: 60000
+      connectionTimeout: 30000
+      maxLifetimeMs: 1800000
+      maximumPoolSize: 20
+      leakDetectionThresholdMs: 4800
+  jooq:
+      sql-dialect: MYSQL
+  devtools:
+      restart:
+        enabled: true
+        exclude: static/**,public/**,templates/**
+      livereload:
+        enabled: true
+
+#是否允许生成代码，生产环境设置为false
+generator:
+  enabled: true

@@ -36,9 +36,6 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("lululu项目的RESTful APIs")
                 .description("lululu项目的RESTful APIs")
-                .termsOfServiceUrl("lululu")
-                .contact("David inner")
-                .version("2.0")
                 .build();
     }
 }
