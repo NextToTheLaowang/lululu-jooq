@@ -1,4 +1,4 @@
-package com.java.src.lululu.utils;
+package com.java.src.lululu.common.utils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.java.src.lululu.common.util;
+package com.java.src.lululu.common.utils;
 
 import java.security.MessageDigest;
 

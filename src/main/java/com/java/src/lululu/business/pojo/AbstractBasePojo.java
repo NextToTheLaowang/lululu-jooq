@@ -2,7 +2,7 @@ package com.java.src.lululu.business.pojo;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.java.src.lululu.utils.SpringUtil;
+import com.java.src.lululu.common.utils.SpringUtil;
 import org.springframework.context.MessageSource;
 
 import java.io.Serializable;

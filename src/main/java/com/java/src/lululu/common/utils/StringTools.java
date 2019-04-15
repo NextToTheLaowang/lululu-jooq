@@ -1,4 +1,4 @@
-package com.java.src.lululu.utils;
+package com.java.src.lululu.common.utils;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;

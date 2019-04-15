@@ -1,4 +1,4 @@
-package com.java.src.lululu.utils;
+package com.java.src.lululu.common.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -48,7 +48,7 @@ public class SpringUtil implements ApplicationContextAware {
         try {
             temp = SpringUtil.getBean(MessageSource.class).getMessage(code, null, null);
         } catch (Exception e) {
-            log.error("找不到对应的 messageSource ", e);
+//            log.error("找不到对应的 messageSource ", e);
             temp = code;
         }
         return temp;
@@ -59,7 +59,7 @@ public class SpringUtil implements ApplicationContextAware {
         try {
             temp = SpringUtil.getBean(MessageSource.class).getMessage(code, null, null);
         } catch (Exception e) {
-            log.error("找不到对应的 messageSource ", e);
+//            log.error("找不到对应的 messageSource ", e);
             temp = code;
         }
         return temp;
@@ -76,7 +76,7 @@ public class SpringUtil implements ApplicationContextAware {
         try {
             temp = SpringUtil.getBean(MessageSource.class).getMessage(code, objects, null);
         } catch (Exception e) {
-            log.error("找不到对应的 messageSource ", e);
+//            log.error("找不到对应的 messageSource ", e);
             temp = code;
         }
         return temp;
