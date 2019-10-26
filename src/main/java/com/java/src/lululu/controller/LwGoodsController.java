@@ -25,7 +25,7 @@ import static com.java.src.lululu.business.domain.Tables.LW_GOODS;
 
 @RestController
 @RequestMapping("front/goods/")
-@Api(value = "front/goods/", description = "商品相关")
+@Api(value = "front/goods/", description = "商品相关1")
 public class LwGoodsController {
 
     @Autowired
